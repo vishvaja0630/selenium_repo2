@@ -26,7 +26,7 @@ pipeline {
         }
         }
 	    
-	     stage('Build Image') {
+	  /*   stage('Build Image') {
             steps {
                 script {
                 	app = docker.build("shraddhal/seleniumtest2")
@@ -50,28 +50,30 @@ pipeline {
          	   }
 	      }        
    	 }
-	    
+	    */
 	    
 	    stage('compose') {
             steps {
                 script {
 			//sh 'docker run -d -p 4444:4444 --memory="1.5g" --memory-swap="2g" -v /dev/shm:/dev/shm selenium/standalone-chrome'
 			bat 'docker-compose up -d'
-			//bat 'mvn test'
+			bat 'mvn test'
                 }
 	    }
         }
 	    
-	    stage('Execute') {
+	 /*   stage('Execute') {
 		 steps {
                 script {
-		/* Execute the pytest script. On faliure proceed to next step */
+		// Execute the pytest script. On faliure proceed to next step
         catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
      // bat 'mvn test'
             //  bat 'docker run --network="host" --rm -v C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\seleniumAssi3\target\allure-results:\AllureReports shraddhal/seleniumtest  --browser "chrome" .'
        bat 'docker run --network="host" --rm -v C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\seleniumAssi3\\target\\allure-results:\\AllureReports shraddhal/seleniumtest2  -v /dev/shm:/dev/shm --suitename "testng.xml" --executor "remote" --browser "chrome" .'
 	}}}
   	 }
+	    
+	     */
 }  
 /*post {
           always {
