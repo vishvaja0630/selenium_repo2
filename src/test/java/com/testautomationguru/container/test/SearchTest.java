@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import com.testautomationguru.container.pages.SearchPage;
 
-public class SearchTest throws MalformedURLException {
+public class SearchTest {
 
     @BeforeSuite
     public void initialDelay(){
