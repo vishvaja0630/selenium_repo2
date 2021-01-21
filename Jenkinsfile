@@ -4,12 +4,12 @@ pipeline {
         maven 'maven3.6' 
 		 jdk 'jdk1.8'
     }
-	 environment {
+	/* environment {
         containerName = "shraddhal/seleniumtest"
         container_version = "1.0.0.${BUILD_ID}"
         dockerTag = "${containerName}:${container_version}"
 		     
-    }
+    }*/
     stages { 	
 	    stage('Clone repository') {
 			   steps {	       
