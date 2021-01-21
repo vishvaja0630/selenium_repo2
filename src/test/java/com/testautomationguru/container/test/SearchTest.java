@@ -1,6 +1,5 @@
 package com.testautomationguru.container.test;
 
-import java.net.MalformedURLException;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -27,7 +26,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
-public class SearchTest throws MalformedURLException{
+public class SearchTest {
 protected WebDriver driver;
     @BeforeTest
     public void setUp()  {
