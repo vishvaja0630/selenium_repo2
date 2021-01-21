@@ -10,14 +10,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchPage throws MalformedURLException {
+public class SearchPage {
 
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+   
 
-    public SearchPage(final WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        this.wait = new WebDriverWait(driver, 30);
+    public SearchPage() {
+      System.out.println("main");  
     }
 }
