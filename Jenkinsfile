@@ -69,7 +69,7 @@ pipeline {
         catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
      // bat 'mvn test'
             //  bat 'docker run --network="host" --rm -v C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\seleniumAssi3\target\allure-results:\AllureReports shraddhal/seleniumtest  --browser "chrome" .'
-       bat 'docker run --network="host" --rm -v C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\seleniumAssi3\\target\\allure-results:\\AllureReports shraddhal/seleniumtest2  --browser "chrome" suite/.'
+       bat 'docker run --network="host" --rm -v C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\seleniumAssi3\\target\\allure-results:\\AllureReports shraddhal/seleniumtest2  --suitename "suite/search-module.xml" --browser "chrome" .'
 	}}}
   	 }
 }  
