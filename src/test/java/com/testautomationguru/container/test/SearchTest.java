@@ -30,9 +30,9 @@ public class SearchTest extends BaseTest {
         String title = driver.getTitle();                  
         System.out.println(title);  
         if(title.equals("Google"))
-        Assert.assertTrue(true);
+            Assert.assertTrue(true);
         else
-        Assert.assertTrue(false);
+            Assert.assertTrue(false);
    
     }
     /*@Test()
