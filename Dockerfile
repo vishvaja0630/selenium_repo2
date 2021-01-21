@@ -8,7 +8,7 @@ ADD  target/container-test.jar container-test.jar
 ADD  target/libs libs
 
 ADD suite/search-module.xml search-module.xml
-
+ADD suite/search2-module.xml search2-module.xml
 # Command line to execute the test
 # Expects below ennvironment variables
 # BROWSER = chrome / firefox
