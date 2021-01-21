@@ -54,16 +54,20 @@ protected WebDriver driver;
         
         
         driver.get("https://www.google.com");  
-        // get the current URL of the page  
+        // get the current URL of the page   
         String URL= driver.getCurrentUrl();  
-        System.out.print(URL);  
+        System.out.println("current URL of the page fetched: "+URL); 
         //get the title of the page  
         String title = driver.getTitle();                  
-        System.out.println(title);  
+        System.out.println("Title: "title);  
         if(title.equals("Google"))
-            Assert.assertTrue(true);
+             {Assert.assertTrue(true);
+             System.out.println("1");  
+             }
         else
-            Assert.assertTrue(false);
+            {Assert.assertTrue(false);
+             System.out.println("0");  
+            }
    
     }
     @AfterTest
