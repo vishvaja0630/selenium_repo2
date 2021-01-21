@@ -32,7 +32,7 @@ public class BaseTest {
     }
     
     @BeforeTest
-    public void setUp() {
+    public void setUp() throws MalformedURLException{
         
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
