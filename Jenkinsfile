@@ -33,7 +33,7 @@ pipeline {
 		    
 		    	
 withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-  sh 'clean package -DskipTests'
+  sh 'mvn clean package -DskipTests'
 }
 			
 			
