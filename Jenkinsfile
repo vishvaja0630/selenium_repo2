@@ -19,7 +19,7 @@ pipeline {
 	    
 	   stage ('Initialize') {
             steps {
-                sh '''
+                bat '''
                     echo "PATH = ${PATH}"
                    
 		    echo "MAVEN_HOME = ${MAVEN_HOME}"
