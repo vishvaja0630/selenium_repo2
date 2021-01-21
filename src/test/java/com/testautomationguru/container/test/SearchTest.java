@@ -21,7 +21,7 @@ public class SearchTest extends BaseTest {
 
    @Test()
     public void googleTest() {
-        //google.goTo();
+        google.goTo();
         if(google.checkTitle().equals("Google"))
         Assert.assertTrue(true);
         else
