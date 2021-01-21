@@ -1,9 +1,9 @@
 pipeline {
      agent any
-	 tools {
+	/* tools {
         maven 'maven3.6' 
 		 jdk 'jdk1.8'
-    }
+    }*/
 	/* environment {
         containerName = "shraddhal/seleniumtest"
         container_version = "1.0.0.${BUILD_ID}"
@@ -17,7 +17,7 @@ pipeline {
         
 			   }
 	    
-	     stage ('Initialize') {
+	  /*   stage ('Initialize') {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
@@ -25,7 +25,7 @@ pipeline {
 		    echo "MAVEN_HOME = ${MAVEN_HOME}"
                 '''
             }
-        }
+        }*/
 	    
 	/*     stage('Build Jar') {
 	    
