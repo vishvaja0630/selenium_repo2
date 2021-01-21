@@ -20,19 +20,19 @@ pipeline {
 		     
 	
 		     
-            steps {////
-		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
-        		//sh 'docker system prune --all --volumes --force'
-		    
+          
 		    
 		    	     def mvn_version = 'maven3.6'
 withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
   sh 'clean package -DskipTests'
 }
 	    
-		    
+		  // steps {////
+		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
+        		//sh 'docker system prune --all --volumes --force'
+		       
 		    //  sh 'clean package -DskipTests'
-            }
+           // }
         }
         stage('Build Image') {
             steps {
