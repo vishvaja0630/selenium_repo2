@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchPage throws MalformedURLException{
+public class SearchPage throws MalformedURLException {
 
     private final WebDriver driver;
     private final WebDriverWait wait;
@@ -20,22 +20,4 @@ public class SearchPage throws MalformedURLException{
         PageFactory.initElements(driver, this);
         this.wait = new WebDriverWait(driver, 30);
     }
-
-   // public void goTo() {
- //       driver.get("https://www.google.com");
- //       System.out.println("Browser launched and navigated to Google");
- //   }
-    
-    /*public Boolean checkTitle(String expectedTitle){
-       return driver.getTitle().contains(expectedTitle);
-   }*/
-  /*
- public String checkTitle(){
-  driver.navigate().to("https://www.google.com");
-  String pageTitle = driver.getTitle();
-  System.out.println(pageTitle);
-  return pageTitle;
-  }*/
-                       
-
 }
