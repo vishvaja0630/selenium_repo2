@@ -8,6 +8,7 @@ pipeline {
         containerName = "shraddhal/seleniumtest"
         container_version = "1.0.0.${BUILD_ID}"
         dockerTag = "${containerName}:${container_version}"
+		      def mvn_version = 'maven3.6'
     }
     stages { 	
 	    stage('Clone repository') {
@@ -19,20 +20,25 @@ pipeline {
 	     stage('Build Jar') {
 		     
 	
-		     
-          
-		    
-		    	     def mvn_version = 'maven3.6'
-withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-  sh 'clean package -DskipTests'
-}
 	    
-		  // steps {////
+		steps {////
 		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
         		//sh 'docker system prune --all --volumes --force'
 		       
 		    //  sh 'clean package -DskipTests'
-           // }
+			
+			
+		     
+          
+		    
+		    	
+withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+  sh 'clean package -DskipTests'
+}
+			
+			
+			
+        }
         }
         stage('Build Image') {
             steps {
