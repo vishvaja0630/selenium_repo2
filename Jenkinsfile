@@ -71,13 +71,13 @@ pipeline {
 	    }
         }    
 	    
-	     stage('Create Report') {
+	   /*  stage('Create Report') {
 		    steps {
                 script {
-        /* Generate Allure Report */
+        // Generate Allure Report
         allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
 		}}}
-	    
+	    */
 	 /*   stage('Execute') {
 		 steps {
                 script {
