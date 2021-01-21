@@ -22,7 +22,7 @@ pipeline {
 		steps {////
 		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
         		//sh 'docker system prune --all --volumes --force'
-		       bat 'clean package -DskipTests'
+		       bat 'mvn clean package -DskipTests'
         }
         }
        
