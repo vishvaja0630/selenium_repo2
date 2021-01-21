@@ -22,7 +22,7 @@ public class SearchPage {
     }
 
     public void goTo() {
-        this.driver.get("https://www.google.com");
+        driver.get("https://www.google.com");
         System.out.println("Browser launched and navigated to Google");
     }
     
