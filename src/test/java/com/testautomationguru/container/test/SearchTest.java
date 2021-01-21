@@ -35,6 +35,7 @@ protected WebDriver driver;
         //to hub - test fails saying hub does not have node!!
         //very rare
         Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
+        
     }
     @BeforeTest
     public void setUp()  {
