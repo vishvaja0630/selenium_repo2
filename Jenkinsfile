@@ -65,7 +65,7 @@ pipeline {
 	 stage('test') {
             steps {
                 script {
-			bat 'mvn test'
+			bat 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
                 }
 	    }
         }    
