@@ -6,21 +6,16 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import java.net.MalformedURLException;
-import com.testautomationguru.container.pages.SearchPage;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
-
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -60,13 +55,13 @@ protected WebDriver driver;
         //get the title of the page  
         String title = driver.getTitle();                  
         System.out.println("Title: "+title);  
-        if(title.equals("Google"))
+        if(title.equals("google"))
              {Assert.assertTrue(true);
-             System.out.println("1");  
+             System.out.println("Shouldn't be so, change the title to Google");  
              }
         else
             {Assert.assertTrue(false);
-             System.out.println("0");  
+             System.out.println("Ok");  
             }
    
     }
