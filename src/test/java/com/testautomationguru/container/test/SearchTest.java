@@ -21,13 +21,17 @@ public class SearchTest extends BaseTest {
 
    @Test()
     public void googleTest() {
-         google = new SearchPage(driver);
-    google.goTo();
-        if(google.checkTitle().equals("Google"))
+        driver.get("https://www.google.com");  
+        // get the current URL of the page  
+        String URL= driver.getCurrentUrl();  
+        System.out.print(URL);  
+        //get the title of the page  
+        String title = driver.getTitle();                  
+        System.out.println(title);  
+        if(title.equals("Google"))
         Assert.assertTrue(true);
         else
         Assert.assertTrue(false);
-     
    
     }
     /*@Test()
