@@ -30,7 +30,7 @@ public class SearchPage {
        return driver.getTitle().contains(expectedTitle);
    }*/
   
-  public String checkTitle(){
+ public String checkTitle(){
   driver.navigate().to("https://www.google.com");
   String pageTitle = driver.getTitle();
   System.out.println(pageTitle);
