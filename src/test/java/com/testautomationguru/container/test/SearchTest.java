@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import com.testautomationguru.container.pages.SearchPage;
 
-public class SearchTest extends BaseTest {
+public class SearchTest extends BaseTest throws MalformedURLException {
 
     private SearchPage google;
 
