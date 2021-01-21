@@ -59,7 +59,7 @@ protected WebDriver driver;
         System.out.println("current URL of the page fetched: "+URL); 
         //get the title of the page  
         String title = driver.getTitle();                  
-        System.out.println("Title: "title);  
+        System.out.println("Title: "+title);  
         if(title.equals("Google"))
              {Assert.assertTrue(true);
              System.out.println("1");  
