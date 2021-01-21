@@ -15,12 +15,13 @@ public class SearchTest extends BaseTest {
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
-        super.setUp();
+        System.out.println("before test");  
      //  google = new SearchPage(driver);//= new SearchPage(driver)
     }
 
    @Test()
     public void googleTest() {
+        super.setUp();
         driver.get("https://www.google.com");  
         // get the current URL of the page  
         String URL= driver.getCurrentUrl();  
