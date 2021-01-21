@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
+import java.net.MalformedURLException;
 import com.testautomationguru.container.pages.SearchPage;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.testng.annotations.BeforeSuite;
@@ -34,7 +34,7 @@ protected WebDriver driver;
     }
 
    @Test()
-    public void googleTest() {
+    public void googleTest() throws MalformedURLException {
         
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
