@@ -25,6 +25,16 @@ pipeline {
 		       bat 'mvn clean package -DskipTests'
         }
         }
+	    
+	     stage('Build Image') {
+            steps {
+                script {
+                	app = docker.build("shraddhal/seleniumtest2")
+                }
+            }
+        }
+	    
+	    
        
 	    
 }  
