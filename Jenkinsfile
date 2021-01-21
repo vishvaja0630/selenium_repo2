@@ -17,27 +17,21 @@ pipeline {
         
 			   }
 	    
+	     stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
+	    
 	     stage('Build Jar') {
-		     
-	
 	    
 		steps {////
 		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
         		//sh 'docker system prune --all --volumes --force'
-		       
-		    //  sh 'clean package -DskipTests'
-			
-			
-			script{
-          
-		    
-		    	 def mvn_version = 'maven3.6'
-withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-  sh 'mvn clean package -DskipTests'
-}
-			}	
-			
-			
+		       sh 'clean package -DskipTests'
         }
         }
         stage('Build Image') {
