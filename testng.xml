@@ -10,10 +10,4 @@
       <class name="com.testautomationguru.container.test.SearchTest"/>
     </classes>
     </test>
-    <test name="com.SecondTest">
-        <parameter name="browser" value="chrome"/>
-        <classes>
-      <class name="com.testautomationguru.container.test.OrderTest"/>
-    </classes>
-    </test>
 </suite>
