@@ -8,17 +8,27 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.testautomationguru.container.pages.SearchPage;
+import com.google.common.util.concurrent.Uninterruptibles;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterTest;
+import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
 public class SearchTest {
 
-    @BeforeSuite
-    public void initialDelay(){
-        //intentionally added this as chrome/firefox containers take few ms to register
-        //to hub - test fails saying hub does not have node!!
-        //very rare
-        Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-    }
-    
     @BeforeTest
     public void setUp()  {
         System.out.println("before test");  
