@@ -11,12 +11,12 @@ import com.testautomationguru.container.pages.SearchPage;
 
 public class SearchTest extends BaseTest {
 
-    private SearchPage google;
+    private SearchPage google = new SearchPage(driver);
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
         super.setUp();
-        google = new SearchPage(driver);
+       // google = new SearchPage(driver);
     }
 
    @Test()
