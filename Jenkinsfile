@@ -25,12 +25,7 @@ pipeline {
 		       bat 'mvn clean package -DskipTests'
         }
         }
-	    stage('Create Report') {
-		    steps {
-                script {
-        /* Generate Allure Report */
-        allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-		}}}
+	   
 	    
 	  /*   stage('Build Image') {
             steps {
@@ -76,7 +71,12 @@ pipeline {
 	    }
         }    
 	    
-	    
+	     stage('Create Report') {
+		    steps {
+                script {
+        /* Generate Allure Report */
+        allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
+		}}}
 	    
 	 /*   stage('Execute') {
 		 steps {
