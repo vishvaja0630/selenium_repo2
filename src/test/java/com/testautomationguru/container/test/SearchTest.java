@@ -28,6 +28,14 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 public class SearchTest {
 protected WebDriver driver;
+    
+      @BeforeSuite
+    public void initialDelay(){
+        //intentionally added this as chrome/firefox containers take few ms to register
+        //to hub - test fails saying hub does not have node!!
+        //very rare
+        Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
+    }
     @BeforeTest
     public void setUp()  {
         System.out.println("before test");  
