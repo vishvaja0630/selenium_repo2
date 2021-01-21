@@ -56,7 +56,7 @@ pipeline {
             steps {
                 script {
 			//sh 'docker run -d -p 4444:4444 --memory="1.5g" --memory-swap="2g" -v /dev/shm:/dev/shm selenium/standalone-chrome'
-			bat 'docker-compose up -d'
+			bat 'docker-compose up -d -newSessionWaitTimeout 25000'
 			
                 }
 	    }
