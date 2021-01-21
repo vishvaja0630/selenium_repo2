@@ -56,8 +56,8 @@ pipeline {
             steps {
                 script {
 			//sh 'docker run -d -p 4444:4444 --memory="1.5g" --memory-swap="2g" -v /dev/shm:/dev/shm selenium/standalone-chrome'
-			sh 'docker-compose up -d'
-			//sh 'mvn test'
+			bat 'docker-compose up -d'
+			bat 'mvn test'
                 }
 	    }
         }
