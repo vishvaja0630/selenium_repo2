@@ -9,19 +9,32 @@ import org.testng.annotations.Test;
 
 import com.testautomationguru.container.pages.SearchPage;
 
-public class SearchTest extends BaseTest throws MalformedURLException{
+public class SearchTest throws MalformedURLException{
 
-    private SearchPage google;
-
+    @BeforeSuite
+    public void initialDelay(){
+        //intentionally added this as chrome/firefox containers take few ms to register
+        //to hub - test fails saying hub does not have node!!
+        //very rare
+        Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
+    }
+    
     @BeforeTest
     public void setUp()  {
         System.out.println("before test");  
-     //  google = new SearchPage(driver);//= new SearchPage(driver)
     }
 
    @Test()
     public void googleTest() {
-        super.setUp();
+        
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        capabilities.setCapability(ChromeOptions.CAPABILITY,options);
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+        driver.manage().window().maximize();
+        
+        
         driver.get("https://www.google.com");  
         // get the current URL of the page  
         String URL= driver.getCurrentUrl();  
@@ -35,17 +48,10 @@ public class SearchTest extends BaseTest throws MalformedURLException{
             Assert.assertTrue(false);
    
     }
-    /*@Test()
-    public void googleTest() {
-        if(google.checkTitle().equals("Google"))
-        Assert.assertTrue(true);
-        else
-        Assert.assertTrue(false);
-        
-   
-    }*/
-    
-    
-   
+    @AfterTest
+    public void tearDown() throws InterruptedException {
+        driver.close();
+        driver.quit();
+    }  
 
 }
