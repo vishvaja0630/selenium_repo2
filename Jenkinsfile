@@ -17,15 +17,15 @@ pipeline {
         
 			   }
 	    
-	  /*   stage ('Initialize') {
+	   stage ('Initialize') {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
+                   
 		    echo "MAVEN_HOME = ${MAVEN_HOME}"
                 '''
             }
-        }*/
+        }
 	    
 	/*     stage('Build Jar') {
 	    
