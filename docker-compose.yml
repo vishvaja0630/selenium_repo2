@@ -12,7 +12,7 @@ services:
     image: selenium/node-chrome-debug
     volumes:
       - /dev/shm:/dev/shm
-    links:
+    depends_on:
       - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
