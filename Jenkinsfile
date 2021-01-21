@@ -17,10 +17,21 @@ pipeline {
 			   }
 	    
 	     stage('Build Jar') {
+		     
+	
+		     
             steps {////
 		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
         		//sh 'docker system prune --all --volumes --force'
-	         sh 'clean package -DskipTests'
+		    
+		    
+		    	     def mvn_version = 'maven3.6'
+withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+  sh 'clean package -DskipTests'
+}
+	    
+		    
+		    //  sh 'clean package -DskipTests'
             }
         }
         stage('Build Image') {
