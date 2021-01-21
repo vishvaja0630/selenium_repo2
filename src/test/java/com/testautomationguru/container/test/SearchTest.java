@@ -28,7 +28,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 public class SearchTest {
-
+protected WebDriver driver;
     @BeforeTest
     public void setUp()  {
         System.out.println("before test");  
