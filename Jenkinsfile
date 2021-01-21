@@ -12,7 +12,7 @@ pipeline {
     stages { 	
 	    stage('Clone repository') {
 			   steps {	       
-				 checkout scm }
+				 git 'https://github.com/shraddhaL/selenium_repo2.git' }
         
 			   }
 	    
