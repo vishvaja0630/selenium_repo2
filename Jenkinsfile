@@ -57,12 +57,21 @@ pipeline {
                 script {
 			//sh 'docker run -d -p 4444:4444 --memory="1.5g" --memory-swap="2g" -v /dev/shm:/dev/shm selenium/standalone-chrome'
 			bat 'docker-compose up -d'
-			bat 'mvn test'
+			//bat 'mvn test'
                 }
 	    }
         }
 	    
-	    
+	    stage('Execute') {
+		 steps {
+                script {
+		/* Execute the pytest script. On faliure proceed to next step */
+        catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+     // bat 'mvn test'
+              bat 'docker run --network="host" --rm -v ${WORKSPACE}/allure-results:/AllureReports shraddhal/seleniumtest  --browser "chrome" .'
+       
+	}}}
+  	 }
 }  
 /*post {
           always {
