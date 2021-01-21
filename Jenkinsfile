@@ -4,12 +4,12 @@ pipeline {
         maven 'maven3.6' 
 	jdk 'jdk1.8'
     }
-	/* environment {
-        containerName = "shraddhal/seleniumtest"
+	 environment {
+        containerName = "shraddhal/seleniumtest2"
         container_version = "1.0.0.${BUILD_ID}"
         dockerTag = "${containerName}:${container_version}"
 		     
-    }*/
+    }
     stages { 	
 	    stage('Clone repository') {
 			   steps {	       
@@ -35,7 +35,25 @@ pipeline {
         }
 	    
 	    
-       
+       stage('Push Image') {
+            steps {
+                script {// aws:76599700-71c5-4af4-b805-1bcd97a088e4
+			     withCredentials([usernamePassword( credentialsId: 'aecd95e5-cb44-4e0e-93e9-52385789176c', usernameVariable: 'shraddhal', passwordVariable: 'dockerhub1234')]) {
+					
+			docker.withRegistry('https://registry.hub.docker.com', 'aecd95e5-cb44-4e0e-93e9-52385789176c') {
+					sh "docker login -u shraddhal -p dockerhub1234"
+					app.push("${BUILD_NUMBER}")
+					app.push("latest")
+				}
+			
+             		   }
+         	   }
+	      }        
+   	 }
+	    
+	    
+	    
+	    
 	    
 }  
 /*post {
