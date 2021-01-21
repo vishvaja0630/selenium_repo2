@@ -6,9 +6,4 @@
       <class name="com.testautomationguru.container.test.SearchTest"/>
     </classes>
   </test>
-  <test name="search2-test">
-    <classes>
-      <class name="com.testautomationguru.container.test.SearchTest2"/>
-    </classes>
-  </test>
 </suite>
