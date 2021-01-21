@@ -16,7 +16,7 @@ public class SearchTest extends BaseTest {
     @BeforeTest
     public void setUp() throws MalformedURLException {
         super.setUp();
-       this.google = new SearchPage(driver);//= new SearchPage(driver)
+       google = new SearchPage(driver);//= new SearchPage(driver)
     }
 
    @Test()
