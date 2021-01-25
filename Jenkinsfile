@@ -21,8 +21,8 @@ pipeline {
 	    
 		steps {////
 		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
-        		bat 'docker system prune --all --volumes --force'
-		       bat 'mvn clean package -DskipTests'
+        		//bat 'docker system prune --all --volumes --force'
+		       sh 'mvn clean package -DskipTests'
         }
         }
 	   
@@ -57,7 +57,7 @@ pipeline {
             steps {
                 script {
 			//sh 'docker run -d -p 4444:4444 --memory="1.5g" --memory-swap="2g" -v /dev/shm:/dev/shm selenium/standalone-chrome'
-			bat 'docker-compose up -d --scale chrome=3'
+			sh 'docker-compose up -d --scale chrome=3'
 			
                 }
 	    }
@@ -66,7 +66,7 @@ pipeline {
 	 stage('test') {
             steps {
                 script {
-			bat 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
+			sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
                 }
 	    }
         }    
