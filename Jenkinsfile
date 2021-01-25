@@ -72,6 +72,16 @@ pipeline {
 	    }
         }    
 	    
+	     stage('compose down') {
+            steps {
+                script {
+			sh 'docker-compose down'
+			
+                }
+	    }
+        }
+	    
+	    
 	   /*  stage('Create Report') {
 		    steps {
                 script {
