@@ -74,8 +74,8 @@ pipeline {
 	 stage('test') {
             steps {
                 script {
-			sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
-			//sh 'mvn -Dtest="SearchTest.java" test'
+			//sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
+			sh 'mvn -Dtest="SearchTest.java" test'
                 }
 	    }
         }    
