@@ -74,43 +74,11 @@ pipeline {
 	 stage('test') {
             steps {
                 script {
-			//sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
+			--> //sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
 			sh 'mvn -Dtest="SearchTest.java" test'
                 }
 	    }
         }    
 	    
-	   /*  stage('Create Report') {
-		    steps {
-                script {
-        // Generate Allure Report
-        allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
-		}}}
-	    */
-	 /*   stage('Execute') {
-		 steps {
-                script {
-		// Execute the pytest script. On faliure proceed to next step
-        catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
-     // bat 'mvn test'
-            //  bat 'docker run --network="host" --rm -v C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\seleniumAssi3\target\allure-results:\AllureReports shraddhal/seleniumtest  --browser "chrome" .'
-       bat 'docker run --network="host" --rm -v C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\seleniumAssi3\\target\\allure-results:\\AllureReports shraddhal/seleniumtest2  -v /dev/shm:/dev/shm --suitename "testng.xml" --executor "remote" --browser "chrome" .'
-	}}}
-  	 }
-	    
-	     */
-}  
-/*post {
-          always {
-            script {
-              allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'target/allure-results']]
-              ])
-            }
-          }
-        }	*/
+	
 }
