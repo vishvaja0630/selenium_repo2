@@ -62,7 +62,15 @@ pipeline {
                 }
 	    }
         }
-	   
+	 
+	     stage('copy arti') {
+            steps {
+                script {
+			archiveArtifacts artifacts: 'docker-compose.yml', followSymlinks: false
+                }
+	    }
+        }  
+	      
 	 stage('test') {
             steps {
                 script {
@@ -71,14 +79,6 @@ pipeline {
                 }
 	    }
         }    
-	    
-	     stage('copy arti') {
-            steps {
-                script {
-			archiveArtifacts artifacts: 'docker-compose.yml', followSymlinks: false
-                }
-	    }
-        }  
 	    
 	   /*  stage('Create Report') {
 		    steps {
