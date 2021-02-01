@@ -38,10 +38,17 @@ pipeline {
 	    }
         }
 	 
-	     stage('copy arti') {
+	     stage('archive arti') {
             steps {
                 script {
 			archiveArtifacts artifacts: 'docker-compose.yml', followSymlinks: false
+                }
+	    }
+        }  
+	    stage('copy arti') {
+            steps {
+                script {
+			copyArtifacts filter: 'propsfile', fingerprintArtifacts: true, projectName: 'deploy_to_container', selector: workspace()
                 }
 	    }
         }  
